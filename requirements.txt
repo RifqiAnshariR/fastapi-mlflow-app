@@ -11,5 +11,3 @@ pytest>=6.2.5
 httpx>=0.18.2
 python-multipart>=0.0.5
 jupyter
-
--e .
