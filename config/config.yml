@@ -1,0 +1,139 @@
+# Data Path
+train_dataset_path: "data/train.csv"
+test_dataset_path: "data/test.csv"
+
+# Artifact Path
+cleaned_data_path: "artifacts/cleaned_data"
+trained_model_path: "artifacts/trained_model"
+trained_feature_importance_path: "artifacts/trained_feature_importance"
+
+# Model Config
+model_config:
+  linear_regression:
+    fit_intercept: true
+  ridge_regression:
+    alpha: 1.0
+    fit_intercept: true
+    solver: "auto"
+    random_state: 42
+  lasso_regression:
+    alpha: 0.1
+    fit_intercept: true
+    max_iter: 1000
+    random_state: 42
+  elastic_net:
+    alpha: 0.1
+    l1_ratio: 0.5
+    fit_intercept: true
+    max_iter: 1000
+    random_state: 42
+  random_forest:
+    n_estimators: 50
+    max_depth: null
+    min_samples_split: 2
+    random_state: 42
+  gradient_boosting:
+    n_estimators: 100
+    learning_rate: 0.1
+    max_depth: 3
+    random_state: 42
+
+# Dataset columns
+dataset_columns:
+  target: SalePrice
+  irrelevant_features: Id
+  categorical_features:
+    - "MSZoning"
+    - "Street"
+    - "Alley"
+    - "LotShape"
+    - "LandContour"
+    - "Utilities"
+    - "LotConfig"
+    - "LandSlope"
+    - "Neighborhood"
+    - "Condition1"
+    - "Condition2"
+    - "BldgType"
+    - "HouseStyle"
+    - "RoofStyle"
+    - "RoofMatl"
+    - "Exterior1st"
+    - "Exterior2nd"
+    - "MasVnrType"
+    - "ExterQual"
+    - "ExterCond"
+    - "Foundation"
+    - "BsmtQual"
+    - "BsmtCond"
+    - "BsmtExposure"
+    - "BsmtFinType1"
+    - "BsmtFinType2"
+    - "Heating"
+    - "HeatingQC"
+    - "CentralAir"
+    - "Electrical"
+    - "KitchenQual"
+    - "Functional"
+    - "FireplaceQu"
+    - "GarageType"
+    - "GarageFinish"
+    - "GarageQual"
+    - "GarageCond"
+    - "PavedDrive"
+    - "PoolQC"
+    - "Fence"
+    - "MiscFeature"
+    - "SaleType"
+    - "SaleCondition"
+  numerical_features:
+    - "MSSubClass"
+    - "LotFrontage"
+    - "LotArea"
+    - "OverallQual"
+    - "OverallCond"
+    - "YearBuilt"
+    - "YearRemodAdd"
+    - "MasVnrArea"
+    - "BsmtFinSF1"
+    - "BsmtFinSF2"
+    - "BsmtUnfSF"
+    - "TotalBsmtSF"
+    - "1stFlrSF"
+    - "2ndFlrSF"
+    - "LowQualFinSF"
+    - "GrLivArea"
+    - "BsmtFullBath"
+    - "BsmtHalfBath"
+    - "FullBath"
+    - "HalfBath"
+    - "BedroomAbvGr"
+    - "KitchenAbvGr"
+    - "TotRmsAbvGrd"
+    - "Fireplaces"
+    - "GarageYrBlt"
+    - "GarageCars"
+    - "GarageArea"
+    - "WoodDeckSF"
+    - "OpenPorchSF"
+    - "EnclosedPorch"
+    - "3SsnPorch"
+    - "ScreenPorch"
+    - "PoolArea"
+    - "MiscVal"
+    - "MoSold"
+    - "YrSold"
+
+# MLflow Config
+mlflow_config:
+  tracking_uri: "sqlite:///mlflow.db"
+  experiment_name: "house_price_prediction"
+  registered_model_prefix: "house_price_prediction"
+
+# API Configuration
+api_config:
+  title: "House Price Prediction API"
+  description: "API for predicting house price."
+  version: "1.0.0"
+  host: "0.0.0.0"
+  port: 8000
