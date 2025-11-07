@@ -13,3 +13,6 @@
 ## How to run (via Docker):
 1. `docker build -t fastapi-mlflow-app .`
 2. `docker run -d --name fastapi-mlflow-app_container -p 80:8000 fastapi-mlflow-app`
+
+## Flowchart:
+![flowchart](./assets/flowchart.png)
