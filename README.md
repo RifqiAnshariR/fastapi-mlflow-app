@@ -15,4 +15,4 @@
 2. `docker run -d --name fastapi-mlflow-app_container -p 80:8000 fastapi-mlflow-app`
 
 ## Flowchart:
-![flowchart](./assets/flowchart.png)
+![flowchart](./assets/flowchart.jpg)
